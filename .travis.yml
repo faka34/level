@@ -1,0 +1,17 @@
+language: c
+sudo: true
+
+before_install:
+- sudo apt-get update
+- sudo apt-get -y install wget
+- sudo apt-get -y install unzip
+
+env:
+- CONF=--build
+- CONF=--check
+- CONF=--test
+- CONF=--clean
+- CONF=--debug
+
+script:
+- make full
